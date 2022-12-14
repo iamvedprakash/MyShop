@@ -1,0 +1,67 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<div class="col-lg-5 col-md-5 col-sm-5 signup-box">
+
+    <form action="{{ url_for('signup') }}" method="POST" style="width: 80%;">
+                
+        {% if signuperror == 1 %}
+            <ul style="margin: 10px; color:rgb(255, 55, 0);">
+                <li>Enter valid details</li>
+            </ul>
+        {% elif signuperror == 2 %}
+            <ul style="margin: 10px; color:rgb(255, 55, 0);">
+                <li>UserName or Phone already exist</li>
+            </ul>
+        {% endif %}
+
+        <!-- Username input -->
+        <div style="margin-bottom: 10px;">
+            <label for="user">UserName</label>
+            <input id="user" class="form-control" name="username" placeholder="Enter Username" minlength="4" maxlength="8" pattern="^[a-zA-Z0-9]*$"  required />         
+        </div>
+
+        <!-- Enter Phone -->
+        <div style="margin-bottom: 10px;">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" class="form-control" name="phone" placeholder="Enter Phone Number" minlength="5" maxlength="5" pattern="^[0-9]*$"  required />           
+        </div>   
+        
+        <!-- Enter Address -->
+        <div style="margin-bottom: 10px;">
+            <label for="address">Address</label>
+            <input type="text" id="address" class="form-control" name="address" placeholder="Enter Address"  required />           
+        </div> 
+
+        <!-- Enter Password -->
+        <div style="margin-bottom: 10px;">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" class="form-control" name="password" placeholder="Enter password" minlength="4" pattern="^[a-zA-Z0-9_|!]*$"  required />
+            <ul style="margin: 10px;">
+              <li>Password must contain 4 or  more character</li>
+              <li>Only alphabets, number and .-|! are allowed</li>
+            </ul>        
+        </div>
+
+        <!-- Enter Password -->
+        <div style="margin-bottom: 10px;">
+              <label for="confirm_password">Confirm Password</label>
+              <input type="password" id="confirm_password" class="form-control" name="confirm_password" placeholder="Confirm password" minlength="4" pattern="^[a-zA-Z0-9_|!]*$"  required />
+              {% if confirm_password == 1 %}
+              <ul style="margin: 10px; color:rgb(255, 0, 0);">
+                <li>Please provide information in correct format</li>
+              </ul>
+              {% endif %}
+        </div>
+
+        <center>
+            <p>Already have an account <a href="{{ url_for('login') }}" style="color: #48A878;"> Login </a> here.</p>
+      
+            <!-- Submit button -->
+            <input type = "submit" value = "Submit" class="btn btn-primary"/>
+        </center>                
+
+    </form>
+</div>
+
+{% endblock %}

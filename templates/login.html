@@ -1,0 +1,42 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<div class="col-lg-5 col-md-5 col-sm-5 login-box">
+
+        <form action="{{ url_for('login') }}" method="POST" style="width: 70%;">
+      
+            {% if logginerror == 1 %}
+                  <ul style="margin: 10px; color:rgb(255, 55, 0);">
+                    <li>Invalid username or password</li>
+                  </ul>
+            {% endif %}
+              <!-- Username input -->
+              <div style="margin-bottom: 10px;">
+      
+                <label for="username">UserName</label>
+                <input type="text" id="username" class="form-control" name="username" placeholder="Enter Username" minlength="4" maxlength="8" pattern="^[a-zA-Z0-9]*$"  required />
+                
+              </div>
+             <br />
+              <!-- Password input -->
+              <div style="margin-bottom: 10px;">
+      
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password" minlength="4" pattern="^[a-zA-Z0-9.-|!]*$"  required />
+                
+              </div>
+            
+              <center>
+              <!-- Register buttons -->
+              <div class="text-center">
+                 <p>Not a member? <a href="{{url_for('signup')}}" style="color: #48A878;">Register</a></p>
+              </div>
+      
+              <!-- Submit button -->
+              <input type = "submit" value = "Login" class="btn btn-primary"/>
+            </center>      
+        </form>
+
+</div>
+
+{% endblock %}

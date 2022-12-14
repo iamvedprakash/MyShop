@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/favicon.ico">
+    <title>MyShop</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Import CSS-->
+    <link rel= "stylesheet" type= "text/css" href= "../static/main.css"/>
+
+    <script>
+        var orders = {{orders | safe}}
+    </script>
+
+    <!-- Import Javascript -->
+    <script src="{{url_for('static',filename='order.js')}}"></script>
+
+
+
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-inverse">
+           <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" id="logo">MyShop</a>
+            </div>
+
+            {% if 'user' in session %}
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 30px;">
+              <li><a href="{{ url_for('home') }}" class="header-link"><span class="glyphicon glyphicon-user"></span>Welcome {{session['user']}}!!</a></li>
+              <li><a href="{{ url_for('orders') }}" class="header-link"> <span class="glyphicon glyphicon-list-alt"></span>Order History</a></li>
+              <li><a href="{{ url_for('logout') }}" class="header-link"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+            </ul>
+            {% endif %}
+
+           </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <table class="table table-hover order">
+            <thead>
+                <tr>
+                    <td><b>Item</b></td>
+                    <td><b>Quantity</b></td>
+                    <td><b>Amount</b></td>
+                    <td><b>Order Date</b></td>
+                    <td><b>Status</b></td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

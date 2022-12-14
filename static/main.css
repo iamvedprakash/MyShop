@@ -1,0 +1,149 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+
+
+/* Navigation Bar */
+.navbar, .navbar-inverse{
+    background-color:#10ab7d !important;
+    border-radius: 0px !important;
+    border: none !important;
+}
+
+.navbar-header{
+    margin-left: 2% !important;
+}
+
+.navbar-right{
+    margin-right: 2% !important;
+}
+
+.navbar-brand{
+    font-family: 'Brush Script MT', cursive; font-size:30px !important; 
+    color: white !important;
+}
+
+.header-link{
+    color: white !important;
+}
+
+.glyphicon{
+    margin-right: 3px !important;
+}
+
+/* Login */
+.login-box{
+    padding-top: 5%; 
+    padding-left: 5%;
+}
+
+.login-box input[type='submit'], .login-box input[type='submit']:hover {
+    background-color: #10ab7d !important;
+    border-color: #10ab7d !important;
+}
+
+/* Signup */
+.signup-box{
+    padding-top: 5%; 
+    padding-left: 5%;
+}
+
+.signup-box input[type='submit'], .signup-box input[type='submit']:hover {
+    background-color: #10ab7d !important;
+    border-color: #10ab7d !important;
+}
+
+/* Order box */
+.cart-box .table{
+    width: 80% !important; 
+}
+
+.cart-box{
+    padding-top: 3%;
+    padding-left: 5%;
+}
+
+.cart-box button, .cart-box button:hover{
+    width: 80% !important;
+    background-color: #10ab7d !important;
+    color: white !important;
+    border-color: #10ab7d !important;
+}
+
+/* Search Box */
+#search-option{
+    margin: 1%; 
+    padding: 2%;
+}
+
+.search-option input[type='text'], .search-option input[type='text']:focus{
+    border: white 0px !important;
+    border-bottom:gray 1px solid  !important;
+    border-radius: 0px;
+    color: rgb(13, 13, 13) !important;
+    width: 40% !important;
+    box-shadow: none !important; 
+}
+
+.item img{
+    height: 80px;
+    width: 100px;
+}
+
+.item button, .item button:hover{
+    background-color: #48A878 !important;
+    border-color: #48A878 !important;
+    color: white !important;
+}
+
+.item td{
+    vertical-align: middle !important;
+    width: 20%;
+}
+
+.item input{
+    width: 40%;
+    margin-right: 4%;
+    display: inline !important;
+}
+
+/*Category*/
+.categories{
+    margin: 1%;
+}
+.category{
+    width: 10%;
+    text-align: center;
+    padding: .5%;
+    border-radius: 10px;
+    background-color: #10ab7d;
+    color: white;
+    margin-right: 3%;
+    margin-left: 3%;
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/*To change scrollbar*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
